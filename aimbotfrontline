@@ -1,0 +1,28 @@
+-- Création de la fenêtre
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent = game.CoreGui
+
+local Frame = Instance.new("Frame")
+Frame.Size = UDim2.new(1, 0, 1, 0)
+Frame.Position = UDim2.new(0, 0, 0, 0)
+Frame.BackgroundColor3 = Color3.new(1, 0, 0) -- Fond rouge
+Frame.Parent = ScreenGui
+
+-- Ajout du bouton "Leave"
+local LeaveButton = Instance.new("TextButton")
+LeaveButton.Text = "Update"
+LeaveButton.Font = Enum.Font.SourceSansBold
+LeaveButton.TextSize = 18
+LeaveButton.Size = UDim2.new(0, 100, 0, 40)
+LeaveButton.Position = UDim2.new(0.5, -50, 0.75, -20)
+LeaveButton.BackgroundColor3 = Color3.new(0, 1, 0)
+LeaveButton.TextColor3 = Color3.new(1, 1, 1)
+LeaveButton.Parent = Frame
+
+-- Fonction pour quitter le jeu
+local function leaveGame()
+    game:Shutdown()
+end
+
+-- Ajout de la fonction à l'écouteur d'événement
+LeaveButton.MouseButton1Click:Connect(leaveGame)
